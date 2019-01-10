@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+	<div>
+    	<p th:if="${personne}" th:text="'Hello, ' + ${personne.firstName} + '  ' + ${personne.lastName} + ' !'"/>
+    	<p th:unless="${personne}" th:text="'Vous n\'êtes pas logué actuellement !'" />
+    </div>
+    <p>Click <a href="hello2">here</a> to see a greeting.</p>
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+      
+    <div> <br/>
+    	<a href="index"><button type="button">Retour accueil</button></a>
+    </div>
+</body>
+</html>
