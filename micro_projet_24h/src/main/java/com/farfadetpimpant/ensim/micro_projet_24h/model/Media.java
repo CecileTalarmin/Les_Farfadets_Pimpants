@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "utilisateur")
+@Table(name = "media")
 public abstract class  Media {
 
     @Id
