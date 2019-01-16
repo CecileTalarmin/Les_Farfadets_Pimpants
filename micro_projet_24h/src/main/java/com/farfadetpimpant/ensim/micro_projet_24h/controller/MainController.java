@@ -9,19 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class HelloWorldController {
+public class MainController {
 
     @Autowired
     private UtilisateurRepository utilisateurDAO;
 
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="nameGET", required=false, defaultValue="World")
-                           String nameGET, Model model) {
-        model.addAttribute("nomTemplate", nameGET);
+    @GetMapping("/index")
+    public String index() {
 
         Utilisateur user1 = new Utilisateur(1, "bbb", "Le Berre", "Pierre");
         utilisateurDAO.save(user1);
 
-        return "greeting";
+        return "index";
     }
 }

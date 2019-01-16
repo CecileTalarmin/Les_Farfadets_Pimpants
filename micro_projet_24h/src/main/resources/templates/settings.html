@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
 	<meta charset="utf-8">
@@ -14,7 +14,7 @@
     
 
     
-    <link href="css/settings.css" rel="stylesheet">
+    <link th:href="@{css/settings.css}" rel="stylesheet">
 
     
 </head>
@@ -22,7 +22,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Adopte un Film</a>
+        <a class="navbar-brand" th:href="@{index}">Adopte un Film</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,7 +41,7 @@
                   Menu
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="settings.html"><i class="fa fa-user"></i>Compte</a>
+                  <a class="dropdown-item" th:href="@{settings}"><i class="fa fa-user"></i>Compte</a>
                   <a class="dropdown-item" href="#"><i class="fa fa-plus"></i>Ajouter un Film</a>
                 </div>
               </li>
