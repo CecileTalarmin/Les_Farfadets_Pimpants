@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Adopte un Film</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+
+    
+    <link href="css/settings.css" rel="stylesheet">
+
+    
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Adopte un Film</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <form class = "search-form">
+                <input type="text" placeholder="rechercher">
+                <button class="btn"><i class="fa fa-search"></i></button>
+              </form>
+            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="settings.html"><i class="fa fa-user"></i>Compte</a>
+                  <a class="dropdown-item" href="#"><i class="fa fa-plus"></i>Ajouter un Film</a>
+                </div>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <h1>Paramètres</h1>
+    <hr class="hr-setting">
+
+    <div class="outer-div">
+    	<div class="row">
+
+
+		 	 <div class="column" style="background-color:#343A40;">
+			    <div class="form-group">
+            		<label class="test col-lg-8 control-label">Prénom:</label>
+		            <div class="test col-lg-8">
+		              <input class="form-control" type="text" value="Rodolphe">
+		            </div>
+          	</div>
+	          <div class="form-group">
+	            <label class="test col-lg-8 control-label">Nom:</label>
+	            <div class="test col-lg-8">
+	              <input class="form-control" type="text" value="Bansard">
+	            </div>
+	          </div>
+	          <div class="form-group">
+	            <label class="test col-lg-8 control-label">Pseudo:</label>
+	            <div class="test col-lg-8">
+	              <input class="form-control" type="text" value="Rodi">
+	            </div>
+	          </div>
+		  	</div>
+
+
+		  <div class="column" style="background-color:#474E56;">
+
+			    <div class="form-group">
+            <label class="test col-lg-8 control-label">Adresse Mail:</label>
+            <div class="test col-lg-8">
+              <input class="form-control" type="text" value="rodolphe.bansard.etu@univ-lemans.fr">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="test col-lg-8 control-label">Mot De Passe:</label>
+            <div class="test col-lg-8">
+              <input class="form-control" type="password" value="123456789">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="test col-lg-8 control-label">Confirmer:</label>
+            <div class="test col-lg-8">
+              <input class="form-control" type="password" value="123456789">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="test col-md-3 control-label"></label>
+            <div class="test col-md-8">
+              <input type="button" class="btn btn-default" value="Save Changes">
+              
+            </div>
+          </div>
+
+	  	</div>
+
+
+		</div>
+
+    </div>
+
+    <hr class="hr-setting">
+    <h1>Mes Préférences</h1>	
+
+    <h3 class="pref-title">Film</h3>
+    
+
+    <div class="outer">
+    	<div class="grid-container">
+	  		
+		  	<img class="categorie" id="cat1" src="images/Catégorie/sf.png">
+
+		  	<img class="categorie" id="cat2" src="images/Catégorie/sf.png">
+
+		  	<img class="categorie" id="cat3" src="images/Catégorie/sf.png">
+		  
+		  
+		</div>
+    </div>
+
+    <div class="container-perso">
+    	<button class="btn-mod" onclick="btn3_click()" id="myBtn">Open Modal</button>
+	    <button class="btn-mod" onclick="btn2_click()" id="myBtn">Open Modal</button>
+	    <button class="btn-mod" onclick="btn1_click()" id="myBtn1">Open Modal</button>
+    </div>
+    <h3 class="pref-title">Série</h3>
+    <div class="outer">
+    	<div class="grid-container">
+	  
+		  <img class="categorie" id="cat4" src="images/Catégorie/sf.png">
+
+		  	<img class="categorie" id="cat5" src="images/Catégorie/sf.png">
+
+		  	<img class="categorie" id="cat6" src="images/Catégorie/sf.png">
+		  
+		</div>
+    </div>
+
+    <div class="container-perso">
+    	<button class="btn-mod" onclick="btn6_click()" id="myBtn">Open Modal</button>
+	    <button class="btn-mod" onclick="btn5_click()" id="myBtn">Open Modal</button>
+	    <button class="btn-mod" onclick="btn4_click()" id="myBtn">Open Modal</button>
+    </div>
+    
+    
+    	
+	
+
+    	
+        
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	  	<span class="close">&times;</span>
+	  	<div class="row">
+	  		
+	  		<div class="column column-cat">
+	  			<img class="modal-cat img1" src="images/Catégorie/Action.png">
+			   	<img class="modal-cat img2" src="images/Catégorie/Anime.png">
+			   	<img class="modal-cat img3" src="images/Catégorie/cm.png">
+	  		</div>
+
+	  		<div class="column">
+	  			<img class="modal-cat img4" src="images/Catégorie/Comedie.png">
+			   	<img class="modal-cat img5" src="images/Catégorie/Documentaire.png">
+			   	<img class="modal-cat img6" src="images/Catégorie/Drame.png">
+	  		</div>
+
+	  		<div class="column">
+	  			<img class="modal-cat img7" src="images/Catégorie/Français.png">
+			   	<img class="modal-cat img8" src="images/Catégorie/Horreur.png">
+			   	<img class="modal-cat img9" src="images/Catégorie/Indépendant.png">
+	  		</div>
+
+	  		<div class="column">
+	  			<img class="modal-cat img10" src="images/Catégorie/policier.png">
+			   	<img class="modal-cat img11" src="images/Catégorie/Romance.png">
+			   	<img class="modal-cat img12" src="images/Catégorie/sf.png">
+	  		</div>	
+
+	  		
+
+
+	  	</div>
+	  
+	  </div>
+
+	</div>
+
+    
+        
+        
+      
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">Copyright © Les Farfadets Pimpants</footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script   src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fiche_details.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(function(){
+                $('#comment').popover({
+
+                    placement: 'bottom',
+                    title: 'Ajouter un commentaire',
+                    html:true,
+                    content:  $('#myForm').html()
+                }).on('click', function(){
+                    // had to put it within the on click action so it grabs the correct info on submit
+                    $('.btn-primary').click(function(){
+                        $('#result').after("form submitted by " + $('#pseudo').val())
+                        $.post('/echo/html/',  {
+                            pseudo: $('#pseudo').val(),
+                            commentaire: $('#commentaire').val(),
+                            
+                        }, function(r){
+                            $('#pops').popover('hide')
+                            $('#result').html('resonse from server could be here' )
+                        })
+                    })
+                })
+            })
+
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Adopte un Film</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <form class = "search-form">
+                                <input type="text" placeholder="Recherche">
+                                <button class="btn"><i class="fa fa-search"></i></button>
+                            </form>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="settings.html"><i class="fa fa-user"></i>Compte</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-plus"></i>Ajouter un Film</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+
+                <!-- COLONNE DE GAUCHE -->
+
+
+                <div class="col-sm-3 " >
+                    <div class="container-fluid img">
+                        <h4 class="titre">Harry Potter à l'école des sorciers</h4> 
+                        <img src="images/FicheFilm/harry_potter_1.jpg" class="mx-auto d-block">
+                    </div>
+                    <div class="container-fluid rating"><a href="#5" title="Donner 5 étoiles">☆</a>
+                        <a href="#4" title="Donner 4 étoiles">☆</a>
+                        <a href="#3" title="Donner 3 étoiles">☆</a>
+                        <a href="#2" title="Donner 2 étoiles">☆</a>
+                        <a href="#1" title="Donner 1 étoile">☆</a>
+                    </div>
+
+                    <div class="form-group">
+                        <p> <label class="champ">Date de sortie : </label>
+                            <label class="entree" id="dateSortie"> 2001</label>
+                        </p>
+                    </div> 
+                    <div class="form-group">
+                        <p> <label class="champ">Réalisateur : </label>
+                            <label class="entree" id="nomRealisateur"> Chris Columbus</label>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p> <label class="champ">Durée : </label>
+                            <label class="entree" id="duree"> 251 minutes</label>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <p> <label class="champ">Genres : </label>
+                            <label class="entree" id="genre1"> Fantastique</label>,  <label class="entree" id="genre2"> Jeunesse et Famille</label>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p> <label class="champ">Public : </label>
+                            <label class="entree" id="public"> Tout public</label>
+                        </p>
+                    </div>
+
+
+                    <!-- Ajouter un commentaire -->
+
+                    <div class="well">
+                        <button type="button" id="comment" class="btn">+ Commentaire</button>
+                    </div>
+                    <div id="myForm" class="hide">
+                        <form action="/echo/html/" id="popForm" method="get">
+                            <div>
+                                <label class="lab" for="pseudo">Pseudo :</label>
+                                <input type="text" name="pseudo" id="pseudo" class="form-control input-md">
+                                <label class="lab" for="about">Commentaire :</label>
+                                <textarea rows="3" name="commentaire" id="commentaire" class="form-control input-md"></textarea>
+                                <button type="button" class="btn btn-default" data-loading-text="Envoi en cours..."><em class="icon-ok"></em> Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="result"></div>
+
+
+
+
+
+
+                </div>
+
+                <!-- COLONNE DU MILIEU -->
+
+                <div class="col" >
+                    <div class="synopsis">
+                        <label>Synopsis : </label>
+                        <p>Orphelin, le jeune Harry Potter peut enfin quitter ses tyranniques oncle et tante Dursley lorsqu'un curieux messager lui révèle qu'il est un sorcier. À 11 ans, Harry va enfin pouvoir intégrer la légendaire école de sorcellerie de Poudlard, y trouver une famille digne de ce nom et des amis, développer ses dons, et préparer son glorieux avenir</p>
+                    </div>
+
+                    <hr>
+
+                    <div class="container mt-3">
+                        <label>Commentaires</label>
+                        <div class="media border p-1 commentaire">
+                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <div class="media-body">
+                                <h6>Anthony Chevreau <small><i>Posté le 14 janvier 2016, </i><b>☆</b>☆☆☆☆</small></h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+                            </div>
+                        </div>
+                        <hr class="comment">
+                        <div class="media border p-1 commentaire">
+                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <div class="media-body">
+                                <h6>Damien Mauget <small><i>Posté le 14 janvier 2016, </i><b>☆☆☆☆</b>☆</small></h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+                            </div>
+                        </div>
+                        <hr class="comment">
+                        <div class="media border p-1 commentaire">
+                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <div class="media-body">
+                                <h6>Cécile Talarmin <small><i>Posté le 14 janvier 2016, </i><b>☆☆☆☆☆</b></small></h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+                            </div>
+                        </div>
+                        <hr class="comment">
+                        <div class="media border p-1 commentaire">
+                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <div class="media-body">
+                                <h6>Rodolphe Bansard <small><i>Posté le 14 janvier 2016, </i><b>☆☆☆</b>☆☆</small></h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+                            </div>
+                        </div>
+                        <hr class="comment">
+                        <div class="media border p-1 commentaire">
+                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <div class="media-body">
+                                <h6>Pierre Le Berre <small><i>Posté le 14 janvier 2016, </i><b>☆☆</b>☆☆☆</small></h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COLONNE DE DROITE -->
+
+                <div class="col-sm-3 droite">
+                    <label>Mes groupes</label>
+                    <div class="mesGroupes">
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a mis à jour son statut</i></p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a ajouté un film à sa playlist</i></p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a visionné un nouveau film</i></p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a noté une série</i></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a changé ses préférences</i></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>est connecté</i></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a regardé une nouvelle série</i></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a suggéré de nouveaux films</i></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a mis à jour son statut</i></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a changé son pseudo</i></p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="" class="gr">
+                            <div class="media groupe">
+                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <div class="media-body">
+                                    <h6>Les Minions</h6>
+                                    <p><i>a noté un film</i></p>
+                                </div>
+                            </div>
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <footer class="footer">
+            <span>Copyright © Les Farfadets Pimpants</span>
+        </footer>
+
+
+    </body>
+
+</html>
+
+

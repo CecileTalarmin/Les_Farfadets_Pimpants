@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+
+  <head>    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Adopte un Film</title>    
+    
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/index.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Adopte un Film</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <form class = "search-form">
+                <input type="text" placeholder="rechercher">
+                <button class="btn"><i class="fa fa-search"></i></button>
+              </form>
+            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Menu
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="settings.html"><i class="fa fa-user"></i>Compte</a>
+                  <a class="dropdown-item" href="#"><i class="fa fa-plus"></i>Ajouter un Film</a>
+                </div>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+
+
+
+
+
+
+    
+
+
+     <div class="contain">
+
+
+    <div class="slider">
+
+      <h3>Films visionnés</h3>
+      <span onmouseover="scrollLeft1()" onmouseout="clearScroll()" class="handle handlePrev active">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </span>
+
+      <div id="scroller1" class="row">
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Django.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Django
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Gravity.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Gravity
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/ImitationGame.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                The Imitation Game
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/YourName.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Your Name
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/MadMax.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Mad Max
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/SnowPiercer.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                SnowPiercer
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/TheBigShort.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                The Big Short
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Whiplash.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Whiplash
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/fmj.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Full Metal Jacket
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Interstellar.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Interstellar
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/PulpFiction.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Pulp Fiction
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/frozen.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                La Reine des Neiges
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <span onmouseover="scrollRight1()" onmouseout="clearScroll()"  class="handle handleNext active">
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <div class="slider">
+      <h3>Séries visionnées</h3>
+      <span onmouseover="scrollLeft2()" onmouseout="clearScroll()" class="handle handlePrev active">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </span>
+
+      <div id="scroller2" class="row">
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/BlackMirror.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Black Mirror
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/BreakingBad.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Breaking Bad
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/DareDevil.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                DareDevil
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Friends.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Friends
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Homeland.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Homeland
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/HouseOfCards.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                House Of Cards
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Narcos.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Narcos
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/StrangerThings.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Stranger Things
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/codeGeass.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Code Geass
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Sherlock.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Sherlock
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/erased.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Erased
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/theEnd.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                The End Of The F**** World
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <span onmouseover="scrollRight2()" onmouseout="clearScroll()"  class="handle handleNext active">
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+      </span>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   <hr>
+
+    <h1>Recommandations</h1>
+
+
+     <div class="contain">
+
+
+    <div class="slider">
+
+      <h3>Film</h3>
+      <span onmouseover="scrollLeft3()" onmouseout="clearScroll()" class="handle handlePrev active">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </span>
+
+      <div id="scroller3" class="row">
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Django.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Django
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Gravity.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Gravity
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/ImitationGame.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                The Imitation Game
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/YourName.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Your Name
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/MadMax.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Mad Max
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/SnowPiercer.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                SnowPiercer
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/TheBigShort.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                The Big Short
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Whiplash.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Whiplash
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/fmj.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Full Metal Jacket
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/Interstellar.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Interstellar
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/PulpFiction.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Pulp Fiction
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Film/frozen.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                La Reine des Neiges
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <span onmouseover="scrollRight3()" onmouseout="clearScroll()"  class="handle handleNext active">
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+      </span>
+    </div>
+
+    <div class="slider">
+      <h3>Série</h3>
+      <span onmouseover="scrollLeft4()" onmouseout="clearScroll()" class="handle handlePrev active">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </span>
+
+      <div id="scroller4" class="row">
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/BlackMirror.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Black Mirror
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/BreakingBad.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Breaking Bad
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/DareDevil.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                DareDevil
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Friends.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Friends
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Homeland.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Homeland
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/HouseOfCards.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                House Of Cards
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Narcos.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Narcos
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/StrangerThings.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Stranger Things
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/codeGeass.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Code Geass
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/Sherlock.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Sherlock
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/erased.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                Erased
+              </div>
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="images/Série/theEnd.png" alt=""  />
+            </div>
+            <div class="gui-card__details">
+              <div class="gui-card__title">
+                The End Of The F**** World
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <span onmouseover="scrollRight4()" onmouseout="clearScroll()"  class="handle handleNext active">
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+      </span>
+    </div>
+
+</div>
+   
+
+    
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="footer">Copyright © Les Farfadets Pimpants</footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
