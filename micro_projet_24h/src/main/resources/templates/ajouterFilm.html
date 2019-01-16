@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Adopte un Film</title>
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/ajouterFilm.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+        <script type="text/javascript">            
+            function faireApparaitreChamp(){
+                if(document.getElementById('serie').checked == true){
+                    document.getElementById('changeant').innerHTML = "Nombre de saisons";
+                }
+                else{
+                    document.getElementById('changeant').innerHTML = "Durée du film (en minutes)";
+                }
+            }
+
+            $(function(){
+                $('#comment').popover({
+
+                    placement: 'bottom',
+                    title: 'Ajouter un commentaire',
+                    html:true,
+                    content:  $('#myForm').html()
+                }).on('click', function(){
+                    // had to put it within the on click action so it grabs the correct info on submit
+                    $('.btn-primary').click(function(){
+                        $('#result').after("form submitted by " + $('#pseudo').val())
+                        $.post('/echo/html/',  {
+                            pseudo: $('#pseudo').val(),
+                            commentaire: $('#commentaire').val(),
+
+                        }, function(r){
+                            $('#pops').popover('hide')
+                            $('#result').html('resonse from server could be here' )
+                        })
+                    })
+                })
+            })
+
+
+        </script>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Adopte un Film</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <form class = "search-form">
+                                <input type="text" placeholder="Recherche">
+                                <button class="btn"><i class="fa fa-search"></i></button>
+                            </form>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Compte</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-plus"></i>Ajouter un Film</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-cog"></i>Paramètres</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <h1>Suggestions de films</h1>
+        <hr class="hr-setting">
+
+        <div class="container-fluid form">
+            <form class="formulaire">
+                <grid class="container-fluid">
+
+                    <fieldset class="col-sm-12">
+                        <div class="column" style="background-color:#474E56;">             <div class="form-group">
+                            <label class="test col-lg-8 control-label">Nom du film</label>
+                            <div class="test col-lg-8 type">
+                                <div class="form-check-inline">
+                                    <label class="form-check-label" for="radio1">
+                                        <input type="radio" class="form-check-input" id="film" name="optradio" value="option1" checked onclick="faireApparaitreChamp()">Film
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label" for="radio2">
+                                        <input type="radio" class="form-check-input" id="serie" name="optradio" value="option2" onclick="faireApparaitreChamp()">Série
+                                    </label>
+                                </div>
+                            </div>
+                            </div> 
+
+
+
+                            <div class="form-group">
+                                <label class="test col-lg-8 control-label" contenteditable="true" >Nom du film</label>
+                                <div class="test col-lg-8">
+                                    <input class="form-control" type="text" placeholder="Harry Potter à l'école des sorciers">
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="cleEtrangere">
+                                <label class="test col-lg-8 control-label"  id="changeant">Durée du film (en minutes)</label>
+                                <div class="test col-lg-8">
+                                    <input class="form-control" type="text" placeholder="">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="test col-lg-8 control-label">Nom du réalisateur</label>
+                                <div class="test col-lg-8">
+                                    <input class="form-control" type="text" placeholder="Chris Columbus">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="test col-lg-8 control-label">Date de sortie</label>
+                                <div class="test col-lg-8">
+                                    <input class="form-control" type="text" value="2001">
+                                </div>
+                            </div>
+
+                            <div class="form-group genres">
+                                <div class=" test col-lg-8 control-label dropdown ">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        Genres                                    </button>
+                                    <div class="dropdown-menu">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="action">Action
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="anime">Anime
+                                            </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="comedie">Comédie
+                                            </label>
+                                        </div> 
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="comedieMus">Comédie musicale
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="doc">Documentaire
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="drame">Drame
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="fantastique"                          >Fantastique
+                                            </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="horreur">Horreur
+                                            </label>
+                                        </div> 
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="independant">Indépendant
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="international">International
+                                            </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="jeunesse">Jeunesse et Famille
+                                            </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" value="" id="scienceFiction">Science fiction
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group public">
+                                <div class=" test col-lg-8 control-label dropdown ">
+
+
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        Public                                    </button>
+                                    <div class="dropdown-menu">
+
+
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="radioTp">
+                                                <input type="radio" class="form-check-input" value="" id="toutPublic" name="optradio" value="toutPub">Tout public
+                                            </label>
+                                        </div>
+                                        <div class="form-check" for="m18">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" value="" id="moins18" name="optradio" value="moins18">-18 ans
+                                            </label>
+                                        </div>
+                                        <div class="form-check" for="16">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" value="" id="moins16" name="optradio" value="moins16">-16 mans
+                                            </label>
+                                        </div> 
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="m12">
+                                                <input type="radio" class="form-check-input" value="" id="moins12" name="optradio" value="moins12">-12 ans
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="m10">
+                                                <input type="radio" class="form-check-input" value="" id="moins10" name="optradio" value="moins10">-10 ans
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="test col-lg-8 control-label">Notez ce film</label>
+                                <div class="container-fluid rating"><a href="#5" title="Donner 5 étoiles">☆</a>
+                                    <a href="#4" title="Donner 4 étoiles">☆</a>
+                                    <a href="#3" title="Donner 3 étoiles">☆</a>
+                                    <a href="#2" title="Donner 2 étoiles">☆</a>
+                                    <a href="#1" title="Donner 1 étoile">☆</a>
+                                </div>
+                            </div>
+
+                            <div class="form-group comm">
+                                <div class=" well col-md-8 test">
+                                    <button type="button" id="comment" class="btn btn-default">+ Commentaire</button>
+                                </div>
+                                <div id="myForm" class="hide">
+                                    <form action="/echo/html/" id="popForm" method="get">
+                                        <div>
+                                            <label class="lab" for="pseudo">Pseudo :</label>
+                                            <input type="text" name="pseudo" id="pseudo" class="form-control input-md">
+                                            <label class="lab" for="about">Commentaire :</label>
+                                            <textarea rows="3" name="commentaire" id="commentaire" class="form-control input-md"></textarea>
+                                            <button type="button" class="btn btn-default" data-loading-text="Envoi en cours..."><em class="icon-ok"></em> Envoyer</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="result"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="test col-lg-8 control-label">           </label>
+                            </div>
+
+
+
+
+
+
+                            <div class="form-group">
+                                <label class="test col-md-3 control-label"></label>
+                                <div class="test col-md-8">
+                                    <input type="button" class="btn btn-default" value="Suggérer ce film">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </grid>
+
+
+            </form>
+        </div>
+
+        <footer class="footer">Copyright © Les Farfadets Pimpants</footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

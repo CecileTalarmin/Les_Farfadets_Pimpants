@@ -224,6 +224,7 @@ h6{
         padding-right: 0 !important;
         padding-left: 0;
     }
+    
 }
 
 .hide{
@@ -234,3 +235,7 @@ h6{
     border-width: 1px !important;
     border-color: silver!important;
 }
+
+.popover-header{ background: #474E56 !important;
+color: white !important} 
+.popover{ background-color: #ecf0f1 !important; }

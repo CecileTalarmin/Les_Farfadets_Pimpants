@@ -32,7 +32,7 @@
                         $.post('/echo/html/',  {
                             pseudo: $('#pseudo').val(),
                             commentaire: $('#commentaire').val(),
-                            
+
                         }, function(r){
                             $('#pops').popover('hide')
                             $('#result').html('resonse from server could be here' )
@@ -50,7 +50,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Adopte un Film</a>
+                <a class="navbar-brand" href="#">Adopte un Film</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -69,8 +69,10 @@
                                 Menu
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="settings.html"><i class="fa fa-user"></i>Compte</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Compte</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-plus"></i>Ajouter un Film</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fa fa-cog"></i>Paramètres</a>
                             </div>
                         </li>
                     </ul>
@@ -90,7 +92,7 @@
                 <div class="col-sm-3 " >
                     <div class="container-fluid img">
                         <h4 class="titre">Harry Potter à l'école des sorciers</h4> 
-                        <img src="images/FicheFilm/harry_potter_1.jpg" class="mx-auto d-block">
+                        <img src="img/harry_potter_1.jpg" class="mx-auto d-block"> 
                     </div>
                     <div class="container-fluid rating"><a href="#5" title="Donner 5 étoiles">☆</a>
                         <a href="#4" title="Donner 4 étoiles">☆</a>
@@ -129,21 +131,24 @@
 
                     <!-- Ajouter un commentaire -->
 
-                    <div class="well">
-                        <button type="button" id="comment" class="btn">+ Commentaire</button>
+                    <div class="form-group">
+                        <div class="well">
+                            <button type="button" id="comment" class="btn">+ Commentaire</button>
+                        </div>
+                        <div id="myForm" class="hide">
+                            <form action="/echo/html/" id="popForm" method="get">
+                                <div>
+                                    <label class="lab" for="pseudo">Pseudo :</label>
+                                    <input type="text" name="pseudo" id="pseudo" class="form-control input-md">
+                                    <label class="lab" for="about">Commentaire :</label>
+                                    <textarea rows="3" name="commentaire" id="commentaire" class="form-control input-md"></textarea>
+                                    <button type="button" class="btn btn-default" data-loading-text="Envoi en cours..."><em class="icon-ok"></em> Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="result"></div>
                     </div>
-                    <div id="myForm" class="hide">
-                        <form action="/echo/html/" id="popForm" method="get">
-                            <div>
-                                <label class="lab" for="pseudo">Pseudo :</label>
-                                <input type="text" name="pseudo" id="pseudo" class="form-control input-md">
-                                <label class="lab" for="about">Commentaire :</label>
-                                <textarea rows="3" name="commentaire" id="commentaire" class="form-control input-md"></textarea>
-                                <button type="button" class="btn btn-default" data-loading-text="Envoi en cours..."><em class="icon-ok"></em> Envoyer</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div id="result"></div>
+
 
 
 
@@ -165,7 +170,7 @@
                     <div class="container mt-3">
                         <label>Commentaires</label>
                         <div class="media border p-1 commentaire">
-                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <img src="img/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                             <div class="media-body">
                                 <h6>Anthony Chevreau <small><i>Posté le 14 janvier 2016, </i><b>☆</b>☆☆☆☆</small></h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
@@ -173,7 +178,7 @@
                         </div>
                         <hr class="comment">
                         <div class="media border p-1 commentaire">
-                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <img src="img/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                             <div class="media-body">
                                 <h6>Damien Mauget <small><i>Posté le 14 janvier 2016, </i><b>☆☆☆☆</b>☆</small></h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
@@ -181,7 +186,7 @@
                         </div>
                         <hr class="comment">
                         <div class="media border p-1 commentaire">
-                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <img src="img/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                             <div class="media-body">
                                 <h6>Cécile Talarmin <small><i>Posté le 14 janvier 2016, </i><b>☆☆☆☆☆</b></small></h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
@@ -189,7 +194,7 @@
                         </div>
                         <hr class="comment">
                         <div class="media border p-1 commentaire">
-                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <img src="img/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                             <div class="media-body">
                                 <h6>Rodolphe Bansard <small><i>Posté le 14 janvier 2016, </i><b>☆☆☆</b>☆☆</small></h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
@@ -197,7 +202,7 @@
                         </div>
                         <hr class="comment">
                         <div class="media border p-1 commentaire">
-                            <img src="images/FicheFilm/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                            <img src="img/index.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                             <div class="media-body">
                                 <h6>Pierre Le Berre <small><i>Posté le 14 janvier 2016, </i><b>☆☆</b>☆☆☆</small></h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>      
@@ -217,7 +222,7 @@
                     <div class="mesGroupes">
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a mis à jour son statut</i></p>
@@ -227,7 +232,7 @@
 
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a ajouté un film à sa playlist</i></p>
@@ -237,7 +242,7 @@
 
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a visionné un nouveau film</i></p>
@@ -256,7 +261,7 @@
                         </a>
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a changé ses préférences</i></p>
@@ -265,7 +270,7 @@
                         </a>
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>est connecté</i></p>
@@ -274,7 +279,7 @@
                         </a>
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a regardé une nouvelle série</i></p>
@@ -283,7 +288,7 @@
                         </a>
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a suggéré de nouveaux films</i></p>
@@ -292,7 +297,7 @@
                         </a>
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a mis à jour son statut</i></p>
@@ -301,7 +306,7 @@
                         </a>
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a changé son pseudo</i></p>
@@ -310,7 +315,7 @@
                         </a>
                         <a href="" class="gr">
                             <div class="media groupe">
-                                <img src="images/FicheFilm/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
+                                <img src="img/groupe.png" class="align-self-start mr-3 mt-3 rounded-circle" style="width:60px">
                                 <div class="media-body">
                                     <h6>Les Minions</h6>
                                     <p><i>a noté un film</i></p>
