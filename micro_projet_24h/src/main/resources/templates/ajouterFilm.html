@@ -103,20 +103,21 @@
                 <grid class="container-fluid">
 
                     <fieldset class="col-sm-12">
-                        <div class="column" style="background-color:#474E56;">             <div class="form-group">
-                            <label class="test col-lg-8 control-label">Nom du film</label>
-                            <div class="test col-lg-8 type">
-                                <div class="form-check-inline">
-                                    <label class="form-check-label" for="film">
-                                        <input type="radio" class="form-check-input" id="film" name="optradio" value="option1" checked onclick="faireApparaitreChamp()">Film
-                                    </label>
+                        <div class="column" style="background-color:#474E56;">
+                            <div class="form-group">
+                                <label class="test col-lg-8 control-label">Nom du film</label>
+                                <div class="test col-lg-8 type">
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label" for="film">
+                                            <input type="radio" class="form-check-input" id="film" name="optradio" value="option1" checked onclick="faireApparaitreChamp()">Film
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label" for="serie">
+                                            <input type="radio" class="form-check-input" id="serie" name="optradio" value="option2" onclick="faireApparaitreChamp()">Série
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label" for="serie">
-                                        <input type="radio" class="form-check-input" id="serie" name="optradio" value="option2" onclick="faireApparaitreChamp()">Série
-                                    </label>
-                                </div>
-                            </div>
                             </div> 
 
 
@@ -233,27 +234,27 @@
 
                                         <div class="form-check">
                                             <label class="form-check-label" for="toutPublic">
-                                                <input type="radio" class="form-check-input" value="" id="toutPublic" name="optradio" value="toutPub">Tout public
+                                                <input type="radio" class="form-check-input" id="toutPublic" name="optradio" value="toutPub">Tout public
                                             </label>
                                         </div>
                                         <div class="form-check" for="moins18">
                                             <label class="form-check-label">
-                                                <input type="radio" class="form-check-input" value="" id="moins18" name="optradio" value="moins18">-18 ans
+                                                <input type="radio" class="form-check-input" id="moins18" name="optradio" value="moins18">-18 ans
                                             </label>
                                         </div>
                                         <div class="form-check" for="moins16">
                                             <label class="form-check-label">
-                                                <input type="radio" class="form-check-input" value="" id="moins16" name="optradio" value="moins16">-16 mans
+                                                <input type="radio" class="form-check-input" id="moins16" name="optradio" value="moins16">-16 mans
                                             </label>
                                         </div> 
                                         <div class="form-check">
                                             <label class="form-check-label" for="moins12">
-                                                <input type="radio" class="form-check-input" value="" id="moins12" name="optradio" value="moins12">-12 ans
+                                                <input type="radio" class="form-check-input" id="moins12" name="optradio" value="moins12">-12 ans
                                             </label>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label" for="moins10">
-                                                <input type="radio" class="form-check-input" value="" id="moins10" name="optradio" value="moins10">-10 ans
+                                                <input type="radio" class="form-check-input" id="moins10" name="optradio" value="moins10">-10 ans
                                             </label>
                                         </div>
 
@@ -264,12 +265,17 @@
 
                             <div class="form-group">
                                 <label class="test col-lg-8 control-label">Notez ce film</label>
-                                <div class="container-fluid rating"><a href="#5" title="Donner 5 étoiles">☆</a>
-                                    <a href="#4" title="Donner 4 étoiles">☆</a>
-                                    <a href="#3" title="Donner 3 étoiles">☆</a>
-                                    <a href="#2" title="Donner 2 étoiles">☆</a>
-                                    <a href="#1" title="Donner 1 étoile">☆</a>
-                                </div>
+                                    <div class="container-fluid rating">
+                                        <p class="star">
+                                            <input name="stars" id="e5" type="radio"><label for="e5">☆</label>
+                                            <input name="stars" id="e4" type="radio"><label for="e4">☆</label>
+                                            <input name="stars" id="e3" type="radio"><label for="e3">☆</label>
+                                            <input name="stars" id="e2" type="radio"><label for="e2">☆</label>
+                                            <input name="stars" id="e1" type="radio"><label for="e1">☆</label>
+
+                                        </p>
+
+                                    </div>
                             </div>
 
                             <div class="form-group comm">
@@ -290,14 +296,6 @@
                                 <div id="result"></div>
                             </div>
                             
-                            <div class="form-group">
-                                <label class="test col-lg-8 control-label">           </label>
-                            </div>
-
-
-
-
-
 
                             <div class="form-group">
                                 <label class="test col-md-3 control-label"></label>
