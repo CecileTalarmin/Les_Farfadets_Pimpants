@@ -7,35 +7,35 @@ import javax.persistence.*;
 public class Utilisateur {
 
 	@Id
-	@Column(name = "id_utilisateur")
-	private Integer id;
+	@Column(name = "pseudo", unique = true)
+	private String pseudo;
 
 	@Column(name = "mot_de_passe")
 	private String motDePasse;
 
-	@Column(name = "nom")
+	@Column(name = "nom", nullable = false)
 	private String nom;
 
-	@Column(name = "prenom")
+	@Column(name = "prenom", nullable = false)
 	private String prenom;
 
 	public Utilisateur() {
 
     }
 
-	public Utilisateur(Integer id, String mdp, String nm, String pnm) {
-	    this.id = id;
+	public Utilisateur(String pseudo, String mdp, String nm, String pnm) {
+	    this.pseudo = pseudo;
 		this.motDePasse = mdp;
 		this.nom = nm;
 		this.prenom = pnm;
 	}
 
-	public int getId() {
-		return id;
+	public String getPseudo() {
+		return pseudo;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 
 	public String getMotDePasse() {

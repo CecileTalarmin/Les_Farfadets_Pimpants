@@ -11,13 +11,11 @@ import java.util.Date;
 public abstract class  Media {
 
     @Id
-    @Column(name = "id_media")
+    @Column(name = "id_media", unique = true)
     private int id;
-
 
     @Column(name = "titre")
     private String titre;
-
 
     @Column(name = "genre")
     private String genre;
