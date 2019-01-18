@@ -17,7 +17,7 @@ public class MainController {
     @GetMapping("/index")
     public String index() {
 
-        Utilisateur user1 = new Utilisateur(1, "bbb", "Le Berre", "Pierre");
+        Utilisateur user1 = new Utilisateur("pseudo", "bbb", "Le Berre", "Pierre");
         utilisateurDAO.save(user1);
 
         return "index";
