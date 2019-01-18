@@ -1,9 +1,8 @@
 package com.farfadetpimpant.ensim.micro_projet_24h.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,7 +10,14 @@ import java.util.Date;
 public abstract class  Media {
 
     @Id
-    @Column(name = "id_media", unique = true)
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     private int id;
 
     @Column(name = "titre")
@@ -27,14 +33,13 @@ public abstract class  Media {
     private String image;
 
     @Column(name = "note")
-    private int note;
+    private double note;
 
     @Column(name = "classification")
     private int classification;
 
 
-    public Media(int id, String titre, String genre, Date date, String image, int note, int classification) {
-        this.id = id;
+    public Media(String titre, String genre, Date date, String image, double note, int classification) {
         this.titre = titre;
         this.genre = genre;
         this.date = date;
@@ -83,7 +88,7 @@ public abstract class  Media {
         this.image = image;
     }
 
-    public int getNote() {
+    public double getNote() {
         return note;
     }
 

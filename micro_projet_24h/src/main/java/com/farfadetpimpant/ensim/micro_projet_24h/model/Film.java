@@ -14,8 +14,8 @@ public class Film extends Media {
     @Column(name = "duree")
     private int duree;
 
-    public Film(int id, String titre, String genre, Date date, String image, int note, int classification, int duree) {
-        super(id, titre, genre, date, image, note, classification);
+    public Film(String titre, String genre, Date date, String image, int note, int classification, int duree) {
+        super(titre, genre, date, image, note, classification);
         this.duree = duree;
     }
     public Film() {

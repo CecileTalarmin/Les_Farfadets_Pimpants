@@ -1,5 +1,7 @@
 package com.farfadetpimpant.ensim.micro_projet_24h.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +9,14 @@ import javax.persistence.*;
 public class Avis {
 
     @Id
-    @Column(name = "id_note")
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "native"
+    )
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
     private int id;
 
     @Column(name = "note")
@@ -20,8 +29,7 @@ public class Avis {
 
     }
 
-    public Avis(int i, int n, String c) {
-        this.id = i;
+    public Avis(int n, String c) {
         this.note = n;
         this.commentaire = c;
     }
