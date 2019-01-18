@@ -65,12 +65,6 @@
                         <h4 class="titre">Harry Potter à l'école des sorciers</h4> 
                         <img src="images/FicheFilm/harry_potter_1.jpg" class="mx-auto d-block"> 
                     </div>
-                    <div class="container-fluid rating"><a href="#5" title="Donner 5 étoiles">☆</a>
-                        <a href="#4" title="Donner 4 étoiles">☆</a>
-                        <a href="#3" title="Donner 3 étoiles">☆</a>
-                        <a href="#2" title="Donner 2 étoiles">☆</a>
-                        <a href="#1" title="Donner 1 étoile">☆</a>
-                    </div>
 
                     <div class="form-group">
                         <p> <label class="champ">Date de sortie : </label>
@@ -102,7 +96,19 @@
 
                     <!-- Ajouter un commentaire -->
 
-                    <div class="form-group">
+                    <div class="form-group cmt">
+                        <div class="container-fluid rating">
+                            <p class="star">
+                                <input name="stars" id="e5" type="radio"><label for="e5">☆</label>
+                                <input name="stars" id="e4" type="radio"><label for="e4">☆</label>
+                                <input name="stars" id="e3" type="radio"><label for="e3">☆</label>
+                                <input name="stars" id="e2" type="radio"><label for="e2">☆</label>
+                                <input name="stars" id="e1" type="radio"><label for="e1">☆</label>
+
+                            </p>
+
+                        </div>
+
                         <div class="well">
                             <button type="button" id="comment" class="btn">+ Commentaire</button>
                         </div>
@@ -119,6 +125,8 @@
                         </div>
                         <div id="result"></div>
                     </div>
+
+
 
 
 

@@ -39,25 +39,42 @@ body{
 
 
 .rating {
-    direction: rtl;
-    display: inline-block;
-    padding-left: auto;
-    padding-right: auto;
+    width: 226px;
+    margin: 0;
     font-size: 2em;
+    overflow:hidden;
+    direction: rtl;
+    float: center;
 }
-.rating a {
+.rating input {
+    float: left;
+    padding-left: 0;
+    opacity: 0;
+
+}
+.rating a,
+.rating label {
+    float:center;
+    padding: 0;
     color: #aaa;
     text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
     transition: color .4s;
+    display: inline;
+    margin-bottom: 15px;
 }
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
 .rating a:hover,
-.rating a:focus,
 .rating a:hover ~ a,
-.rating a:focus ~ a {
+.rating a:focus,
+.rating a:focus ~ a		{
+    font-weight: bold;
     color: white;
     cursor: pointer;
-    font-weight: bold;
-
 }
 
 img{
@@ -150,14 +167,14 @@ div.border{
     border-width: 0px !important;
 }
 
-hr.comment { 
-  border: 0; 
-  height: 1px; 
+hr.comment {
+  border: 0;
+  height: 1px;
       background-image: -webkit-linear-gradient(left,#141414, #f0f0f0, #141414);
 
   background-image: -moz-linear-gradient(left,#141414, #f0f0f0, #141414);
   background-image: -ms-linear-gradient(left,#141414, #f0f0f0, #141414);
-  background-image: -o-linear-gradient(left,#141414, #f0f0f0, #141414); 
+  background-image: -o-linear-gradient(left,#141414, #f0f0f0, #141414);
 }
 
 .media p, small{
@@ -196,6 +213,9 @@ h6{
     margin-top: 0px !important;
     top:0 !important;
 }
+.cmt{
+    display: inline-block !important;
+}
 
 @media screen and (max-width: 756px) {
 
@@ -205,6 +225,11 @@ h6{
         padding-top: 5% !important;
     }
 }
+
+.img{
+        margin-bottom: 20px;
+}
+
 
 @media screen and (max-width: 800px) {
 

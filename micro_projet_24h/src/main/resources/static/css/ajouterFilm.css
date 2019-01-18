@@ -201,27 +201,44 @@ fieldset{
     color: white;
 }
 
+/*
+* Rating styles
+*/
 .rating {
+    width: 226px;
+    margin: 0;
+    font-size: 2em;
+    overflow:hidden;
     direction: rtl;
-    display: inline-block;
-    padding-left: auto;
-    padding-right: auto;
-    font-size: 1em;
+
 }
-.rating a {
+.rating input {
+    float: left;
+    padding-left: 0;
+    opacity: 0;
+
+}
+.rating a,
+.rating label {
+    float:center;
+    padding: 0;
     color: #aaa;
     text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
     transition: color .4s;
 }
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
 .rating a:hover,
-.rating a:focus,
 .rating a:hover ~ a,
-.rating a:focus ~ a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
+.rating a:focus,
+.rating a:focus ~ a		{
     font-weight: bold;
-
+    color: white;
+    cursor: pointer;
 }
 
 .type{
