@@ -25,6 +25,8 @@ public abstract class  Media {
     @Column(name = "date")
     private Date date;
 
+    @Column (name = "image")
+    private String image;
 
     @Column(name = "note")
     private int note;
@@ -33,11 +35,12 @@ public abstract class  Media {
     private int classification;
 
 
-    public Media(int id, String titre, String genre, Date date, int note, int classification) {
+    public Media(int id, String titre, String genre, Date date, String image, int note, int classification) {
         this.id = id;
         this.titre = titre;
         this.genre = genre;
         this.date = date;
+        this.image = image;
         this.note = note;
         this.classification = classification;
     }
@@ -74,6 +77,12 @@ public abstract class  Media {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getImage() { return image; }
+
+    public void setImage(String imgage) {
+        this.image = image;
     }
 
     public int getNote() {

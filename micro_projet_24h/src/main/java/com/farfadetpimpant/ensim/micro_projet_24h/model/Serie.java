@@ -13,8 +13,8 @@ public class Serie extends Media{
     @Column(name = "nbSaison")
     private int nbSaison;
 
-    public Serie(int id, String titre, String genre, Date date, int note, int classification, int nbSaison) {
-        super(id, titre, genre, date, note, classification);
+    public Serie(int id, String titre, String genre, Date date, String image, int note, int classification, int nbSaison) {
+        super(id, titre, genre, date, image, note, classification);
         this.nbSaison = nbSaison;
     }
 
